@@ -1,14 +1,14 @@
-import { PortableText, type SanityDocument } from "next-sanity";
+import { PortableText } from "next-sanity";
+import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "@/sanity/client";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import type { TypedObject } from "@portabletext/types";
 import { Footer } from "@/components/profile_ui/footer";
+import { Card } from "@/components/ui/card";
 
 interface Tag {
   _id: string;
@@ -17,14 +17,7 @@ interface Tag {
   description?: string;
 }
 
-interface Post extends SanityDocument {
-  title: string;
-  slug: { current: string };
-  publishedAt: string;
-  image?: SanityImageSource;
-  tags: Tag[];
-  body: TypedObject[];
-}
+// Removed unused interface 'Post'
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0] {
   _id,
@@ -57,7 +50,7 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const resolvedParams = await params;
-  const post = await client.fetch<Post>(POST_QUERY, resolvedParams, options);
+  const post = await client.fetch(POST_QUERY, resolvedParams, options);
   
   // Handle case where post is not found
   if (!post) {
@@ -78,12 +71,12 @@ export default async function PostPage({
       </Link>
       
       {postImageUrl && (
-        <img
+        <Image
           src={postImageUrl}
           alt={post.title}
+          width={550}
+          height={310}
           className="aspect-video rounded-t-2xl"
-          width="full"
-          height="310"
         />
       )}
       

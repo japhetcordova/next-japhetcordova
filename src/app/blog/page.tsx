@@ -4,7 +4,8 @@ import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import type { TypedObject } from "@portabletext/types";
+import Image from "next/image"; // Added import for Next.js Image component
+// Removed unused import 'TypedObject'
 
 import { client } from "@/sanity/client";
 import { Card } from "@/components/ui/card";
@@ -16,14 +17,7 @@ interface Tag {
   description?: string;
 }
 
-interface Post extends SanityDocument {
-  title: string;
-  slug: { current: string };
-  publishedAt: string;
-  image?: SanityImageSource;
-  tags: Tag[];
-  body: TypedObject[];
-}
+// Removed unused interface 'Post'
 
 const POSTS_QUERY = `*[_type == "post"] {
   _id,
@@ -71,11 +65,11 @@ export default async function IndexPage() {
                 <Link href={`/blog/${post.slug.current}`} className="flex gap-4 items-start flex-col md:flex-row">
                   {postImageUrl && (
                     <div className="flex-shrink-0 flex w-full justify-center md:justify-start md:w-fit">
-                      <img
+                      <Image
                         src={postImageUrl}
                         alt={post.title}
-                        width="200"
-                        height="112"
+                        width={200}
+                        height={112}
                         className="rounded-lg rounded-b-lg object-cover"
                       />
                     </div>

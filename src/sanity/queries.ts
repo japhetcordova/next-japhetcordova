@@ -1,3 +1,6 @@
+// Removed unused variable 'slug'
+// Removed unused variable 'tagSlug'
+
 import { client } from './client'
 
 // Query to get all posts with their tags
