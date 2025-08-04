@@ -22,7 +22,7 @@ export const getAllPostsWithTags = `
 `
 
 // Query to get a single post with its tags
-export const getPostWithTags = (slug: string) => `
+export const getPostWithTags = () => `
   *[_type == "post" && slug.current == $slug][0] {
     _id,
     title,
@@ -50,7 +50,7 @@ export const getAllTags = `
 `
 
 // Query to get posts by tag
-export const getPostsByTag = (tagSlug: string) => `
+export const getPostsByTag = () => `
   *[_type == "post" && $tagSlug in tags[]->slug.current] {
     _id,
     title,
@@ -73,7 +73,7 @@ export const fetchAllPostsWithTags = async () => {
 }
 
 export const fetchPostWithTags = async (slug: string) => {
-  return await client.fetch(getPostWithTags(slug), { slug })
+  return await client.fetch(getPostWithTags(), { slug })
 }
 
 export const fetchAllTags = async () => {
@@ -81,5 +81,5 @@ export const fetchAllTags = async () => {
 }
 
 export const fetchPostsByTag = async (tagSlug: string) => {
-  return await client.fetch(getPostsByTag(tagSlug), { tagSlug })
+  return await client.fetch(getPostsByTag(), { tagSlug })
 } 
