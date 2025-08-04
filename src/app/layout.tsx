@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {  Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import PageTransitionWrapper from "@/components/page-transition-wrapper"; // client wrapper
 
-const geistSans = Geist({
+const inter  = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const jetbrainsMono  = JetBrains_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -23,11 +25,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${jetbrainsMono .variable} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange={false}
+          themes={["light", "dark", "system"]}
+        >
+          <PageTransitionWrapper>
+            {children}
+          </PageTransitionWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );

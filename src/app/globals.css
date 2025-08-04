@@ -1,26 +1,234 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "tw-animate-css";
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+
+  --background: #FAF7F2;       /* Warm off-white, parchment-like */
+  --foreground: #3E2F1C;       /* Deep brown for text */
+
+  --card: #ffffff;             /* Pure white for content areas */
+  --card-foreground: #3E2F1C;
+
+  --popover: #fffaf3;
+  --popover-foreground: #3E2F1C;
+
+  /* Secondary Neutrals */
+  --secondary: #D8CFC4;        /* Soft beige background */
+  --secondary-foreground: #3E2F1C;
+
+  --muted: #B8AFA3;            /* Dusty brown-gray */
+  --muted-foreground: #5C4933;
+
+  /* Accent & Primary Interaction */
+  --primary: #A4753B;          /* Rich bronze / light brown */
+  --primary-foreground: #ffffff;
+
+  --accent: #8B5E3C;           /* Deep brown-copper */
+  --accent-foreground: #ffffff;
+
+  /* Feedback */
+  --destructive: #D14343;
+  --destructive-foreground: #ffffff;
+
+  /* Inputs & Borders */
+  --border: #E6DED3;
+  --input: #F3EEE8;
+  --ring: #C59B6D;             /* Goldish ring */
+
+  /* Chart Palette */
+  --chart-1: #B08968;          /* earthy brown */
+  --chart-2: #D4A373;          /* warm tan */
+  --chart-3: #FFD180;          /* soft amber */
+  --chart-4: #C97C5D;          /* coral clay */
+  --chart-5: #9D6B53;          /* cocoa */
+
+  /* Sidebar */
+  --sidebar: #fffdf9;
+  --sidebar-foreground: #3E2F1C;
+
+  --sidebar-primary: #A4753B;  /* Bronze */
+  --sidebar-primary-foreground: #ffffff;
+
+  --sidebar-accent: #D8CFC4;
+  --sidebar-accent-foreground: #3E2F1C;
+
+  --sidebar-border: #DCCEBE;
+  --sidebar-ring: #A4753B;
+}
+
+
+.dark {
+  /* Base */
+  --background: #0b0a09; /* Charcoal Espresso */
+  --foreground: #e6e0d9; /* Soft Beige Chrome */
+
+  /* Card */
+  --card: #1a1512; /* Deep Mocha Layer */
+  --card-foreground: #f1eae3;
+
+  /* Popover */
+  --popover: #1f1a17; /* Floating Cocoa */
+  --popover-foreground: #f9f5f0;
+
+  /* Primary (Luxurious Brown) */
+  --primary: #a9744f; /* Polished Bronze */
+  --primary-foreground: #0d0b09;
+
+  /* Secondary (Stone Grey-Brown) */
+  --secondary: #2e2621; /* Dark Walnut */
+  --secondary-foreground: #e4d7c9;
+
+  /* Muted */
+  --muted: #3a2f29; /* Muted Hazelnut */
+  --muted-foreground: #b6a79d;
+
+  /* Accent */
+  --accent: #ffe7c6; /* Soft Glowing Ivory */
+  --accent-foreground: #2e1f15;
+
+  /* Destructive */
+  --destructive: #b4453c; /* Burnt Brick */
+  --destructive-foreground: #ffffff;
+
+  /* Borders, Inputs, Rings */
+  --border: #4d3b33; /* Cocoa Edge */
+  --input: #2c201b; /* Rich Soil */
+  --ring: #a9744f; /* Bronze Focus */
+
+  /* Radius & Shadow */
+  --radius: 0.75rem;
+  --shadow: 0 0 25px rgba(169, 116, 79, 0.35); /* Bronze glow */
+
+  /* Charts (Warm & Organic) */
+  --chart-1: #a9744f; /* Bronze */
+  --chart-2: #8e6e53; /* Weathered Coffee */
+  --chart-3: #d95c42; /* Rust Clay */
+  --chart-4: #c1b6aa; /* Linen Mist */
+  --chart-5: #f6eee7; /* Light Ivory */
+
+  /* Sidebar */
+  --sidebar: #0d0c0a; /* Obsidian Wood */
+  --sidebar-foreground: #e6e0d9;
+  --sidebar-primary: #a9744f;
+  --sidebar-primary-foreground: #0d0b09;
+  --sidebar-accent: #2e2621;
+  --sidebar-accent-foreground: #cbbbae;
+  --sidebar-border: #3b302b;
+  --sidebar-ring: #a9744f;
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html, body {
+  transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+@keyframes heavenly-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+    box-shadow:
+      0 0 40px rgba(255, 230, 90, 0.6),
+      0 0 80px rgba(255, 200, 0, 0.3);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow:
+      0 0 80px rgba(255, 230, 90, 0.8),
+      0 0 120px rgba(255, 200, 0, 0.5);
+  }
+}
+
+@keyframes celestial-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.champion-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  /* Heavenly gradient palette */
+  background: linear-gradient(45deg,
+    #ffe55c 0%, #ffdd3d 25%,
+    #ffc300 50%, #ffdd3d 75%, #ffe55c 100%);
+  background-size: 200% 200%; /* animate shifting */
+
+  color: #1a1a1a;
+  font-weight: 500;
+  border-radius: 9999px;
+  padding: 0.85rem 2rem;
+
+  /* Top-tier glow */
+  text-shadow: 0 0 8px rgba(255, 230, 90, 0.9);
+  box-shadow:
+    0 0 40px rgba(255, 230, 90, 0.6),
+    inset 0 0 8px rgba(255, 255, 180, 0.8);
+
+  /* Heavenly animations */
+  animation:
+    heavenly-gradient 10s ease infinite,
+    celestial-pulse 5s ease-in-out infinite;
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.champion-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.98;
+}
+
+.champion-btn:active {
+  transform: scale(0.98);
 }
