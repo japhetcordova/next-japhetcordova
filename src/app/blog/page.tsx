@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { type SanityDocument } from "next-sanity";
-import imageUrlBuilder from "@sanity/image-url";
-import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image"; // Added import for Next.js Image component
+// Added import for Next.js Image component
 // Removed unused import 'TypedObject'
 
 import { client } from "@/sanity/client";
@@ -34,12 +32,6 @@ const POSTS_QUERY = `*[_type == "post"] {
   body
 }`;
 
-const { projectId, dataset } = client.config();
-const urlFor = (source: SanityImageSource) =>
-  projectId && dataset
-    ? imageUrlBuilder({ projectId, dataset }).image(source)
-    : null;
-
 const options = { next: { revalidate: 30 } };
 
 const link = "/";
@@ -56,24 +48,10 @@ export default async function IndexPage() {
       {posts && posts.length > 0 ? (
         <ul className="flex flex-col gap-y-6">
           {posts.map((post) => {
-            const postImageUrl = post.image
-              ? urlFor(post.image)?.width(400).height(225).url()
-              : null;
 
             return (
               <Card key={post._id} className="border rounded-lg p-2 group hover:shadow-lg hover:translate-y-2  duration-500">
                 <Link href={`/blog/${post.slug.current}`} className="flex gap-4 items-start flex-col md:flex-row">
-                  {postImageUrl && (
-                    <div className="flex-shrink-0 flex w-full justify-center md:justify-start md:w-fit">
-                      <Image
-                        src={postImageUrl}
-                        alt={post.title}
-                        width={200}
-                        height={112}
-                        className="rounded-lg rounded-b-lg object-cover"
-                      />
-                    </div>
-                  )}
                   <div className="flex-1 min-w-0">
                     <h2 className="text-lg md:text-2xl font-semibold duration-500">
                       {post.title}
