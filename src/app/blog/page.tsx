@@ -1,11 +1,11 @@
+
 import Link from "next/link";
 import { type SanityDocument } from "next-sanity";
+import imageUrlBuilder from "@sanity/image-url";
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { client } from "@/sanity/client";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-// Added import for Next.js Image component
-// Removed unused import 'TypedObject'
-
-import { client } from "@/sanity/client";
 import { Card } from "@/components/ui/card";
 
 interface Tag {
@@ -37,10 +37,17 @@ const options = { next: { revalidate: 30 } };
 const link = "/";
 
 export default async function IndexPage() {
+
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
 
+  const { projectId, dataset } = client.config();
+  const urlFor = (source: SanityImageSource) =>
+    projectId && dataset
+      ? imageUrlBuilder({ projectId, dataset }).image(source)
+      : null;
+
   return (
-    <main className="container mx-auto min-h-screen max-w-5xl p-8">
+    <main className="container mx-auto min-h-screen max-w-5xl p-2 lg:p-8">
       <Link href={link}>
         <span className="flex items-center group text-sm mb-8 hover:font-bold duration-100"><ArrowLeft className="h-4.5 w-4.5 group-hover:-translate-x-3 duration-200"/>Back to home</span>
       </Link>
@@ -48,15 +55,27 @@ export default async function IndexPage() {
       {posts && posts.length > 0 ? (
         <ul className="flex flex-col gap-y-6">
           {posts.map((post) => {
-
+            const postImageUrl = post.image
+              ? urlFor(post.image)?.width(400).height(220).quality(90).url()
+              : null;
             return (
               <Card key={post._id} className="border rounded-lg p-2 group hover:shadow-lg hover:translate-y-2  duration-500">
-                <Link href={`/blog/${post.slug.current}`} className="flex gap-4 items-start flex-col md:flex-row">
+                <Link href={`/blog/${post.slug.current}`} className="flex flex-col md:flex-row gap-3 md:gap-4 items-start md:items-center">
+                  {postImageUrl && (
+                    <img
+                      src={postImageUrl}
+                      alt={post.title}
+                      className="w-full md:w-[220px] h-[140px] md:h-[120px] aspect-video rounded-xl object-cover object-center mb-2 md:mb-0"
+                      width="400"
+                      height="220"
+                      loading="lazy"
+                    />
+                  )}
                   <div className="flex-1 min-w-0">
-                    <h2 className="text-lg md:text-2xl font-semibold duration-500">
+                    <h2 className="text-base sm:text-lg md:text-2xl font-semibold duration-500">
                       {post.title}
                     </h2>
-                    <p className="text-accent text-xs">
+                    <p className="text-accent text-xs mb-2 md:mb-0">
                       {new Date(post.publishedAt).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',
@@ -64,15 +83,15 @@ export default async function IndexPage() {
                       })}
                     </p>
                     {post.tags && post.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-2 ">
-                    {post.tags.map((tag: Tag) => (
-                      <Badge
-                        key={tag._id}
-                        variant="outline"
-                        className="text-sm mt-4"
-                      >
-                        {tag.title}
-                      </Badge>
+                      <div className="flex flex-wrap gap-2 ">
+                        {post.tags.map((tag: Tag) => (
+                          <Badge
+                            key={tag._id}
+                            variant="outline"
+                            className="text-xs sm:text-sm mt-2 md:mt-4"
+                          >
+                            {tag.title}
+                          </Badge>
                         ))}
                       </div>
                     )}
