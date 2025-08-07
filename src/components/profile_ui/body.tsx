@@ -20,6 +20,7 @@ export const Body = () =>{
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
+                className="flex-1 h-full flex flex-col"
             >
                 
                 <div className="flex flex-col gap-y-2 w-full mt-4">
@@ -39,18 +40,18 @@ export const Body = () =>{
                             </div>
                         </div>               
                     </div>
-                    <div className="flex flex-col md:flex-row gap-2 w-full h-full">
-                        <div className="flex-[2] h-full">
+                    <div className="flex flex-col md:flex-row gap-2 w-full">                      
+                        <div className="flex-[4]">
                             <Projects/>
-                        </div>  
-                        <div className="flex flex-col flex-[1] gap-2 h-full">
+                        </div> 
+                        <div className="flex flex-col flex-[2] gap-2">
+                            <div className="flex-[1]">
+                                <BeyondCoding/>
+                            </div>
                             <div className="flex-[1]">
                                 <Recommendation/>
                             </div>
-                            <div className="flex-[1] h-full">
-                                <BeyondCoding/>
-                            </div>
-                        </div>              
+                        </div>               
                     </div>
                     <div className="flex flex-col md:flex-row gap-2 w-full">                      
                         <div className="flex flex-col flex-[1]">

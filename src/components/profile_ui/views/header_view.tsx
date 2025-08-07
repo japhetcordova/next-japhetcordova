@@ -42,13 +42,14 @@ export const HeaderView = () =>{
             {/* Buttons (including Champion Button) */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 md:mt-4">
               <div className="flex flex-wrap gap-2">
-                <Button size="sm" className="hover:-translate-y-2 duration-400"><Headset/> Schedule a Call</Button>
-                <Button size="sm" className="hover:-translate-y-2 duration-400" variant="outline"><Send/>Send Email</Button>
+                <Button size="sm" className="hover:-translate-y-2 duration-400 cursor-pointer"onClick={() => window.open("https://calendly.com/japhetcordova9/schedule-a-call?month=2025-08", "_blank")}><Headset/> Schedule a Call</Button>
+                <Button size="sm" className="hover:-translate-y-2 duration-400 cursor-pointer" variant="outline" onClick={() => window.location.href = "mailto:japhetcordova9@gmail.com"}><Send/>Send Email</Button>
               </div>
-              <Button className="champion-btn lg:w-md w-sm" aria-label="Champion">
+              <Button className="champion-btn lg:w-md w-full" aria-label="Champion">
                 <Trophy className="w-5 h-5" />
                 UMTC 2025 HACKATHON CHAMPION
               </Button>
+
             </div>
           </div>
         </div>

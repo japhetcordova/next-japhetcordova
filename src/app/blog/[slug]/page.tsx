@@ -1,5 +1,4 @@
 import { PortableText } from "next-sanity";
-import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "@/sanity/client";
@@ -58,11 +57,11 @@ export default async function PostPage({
   }
 
   const postImageUrl = post.image
-    ? urlFor(post.image)?.width(550).height(310).url()
+    ? urlFor(post.image)?.width(1200).height(400).quality(90).url()
     : null;
 
   return (
-    <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col">
+    <main className="container mx-auto min-h-screen max-w-3xl p-2 lg:p-8 flex flex-col">
       <Link href={link}>
         <span className="flex items-center group text-sm mb-8 hover:font-bold duration-100">
           <ArrowLeft className="h-4.5 w-4.5 group-hover:-translate-x-3 duration-200"/>
@@ -71,13 +70,17 @@ export default async function PostPage({
       </Link>
       
       {postImageUrl && (
-        <Image
-          src={postImageUrl}
-          alt={post.title}
-          width={550}
-          height={310}
-          className="aspect-video rounded-t-2xl"
-        />
+        <div className="w-full flex justify-center">
+          <img
+            src={postImageUrl}
+            alt={post.title}
+            className="w-full max-w-3xl h-[180px] sm:h-[260px] md:h-[340px] object-cover object-center rounded-t-xl shadow-md"
+            style={{ aspectRatio: '16/5' }}
+            width="1200"
+            height="400"
+            loading="eager"
+          />
+        </div>
       )}
       
       <p className="mt-4 md:mt-8 text-gray-600">
