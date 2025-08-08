@@ -68,26 +68,30 @@ A comprehensive React-based event management system for organizing events, sessi
 
 **Frontend:**
 - React 19.1.0
-- Vite 7.0.4
-- Material-UI (MUI) 7.3.1
-- Tailwind CSS 4.1.11
-- Styled Components 6.1.19
+- Next.js 15.x
+- Tailwind CSS 4.x
+- TypeScript
+
+**Backend:**
+- Sanity.io (Headless CMS)
+- Node.js (API routes if applicable)
 
 **UI Components:**
-- MUI Data Grid 8.9.2
-- MUI Icons 7.3.0
-- MUI Lab 7.0.0-beta.16
+- Custom React components
+- Shadcn/UI
+- Lucide Icons
 
 **Advanced Features:**
-- React Barcode Scanner 4.0.0
-- Tesseract.js 6.0.1 (OCR)
-- React Webcam 7.2.0
-- React Window 1.8.11 (Virtualization)
+- Real-time updates with Sanity
+- Image optimization
+- Responsive design
+- Custom hooks for data fetching
 
 **Development:**
-- ESLint 9.30.1
-- TypeScript support
+- ESLint & Prettier
 - Hot Module Replacement (HMR)
+- Environment variable support
+- VS Code
 
 ---
 
@@ -95,8 +99,8 @@ A comprehensive React-based event management system for organizing events, sessi
 
 ```bash
 # Clone the repository
-git clone https://github.com/japhetcordova/CODES101.git
-cd event-management-system
+git https://github.com/japhetcordova/next-japhetcordova.git
+cd next-japhetcordova
 
 # Install dependencies
 npm install
