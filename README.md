@@ -1,6 +1,5 @@
-# Event Management System
-
-A comprehensive React-based event management system for organizing events, sessions, rooms, and student data with full CRUD operations and advanced features.
+# Japhet Cordova’s Portfolio – Modern, Interactive, and Recruiter-Friendly Developer Showcase
+Japhet Cordova’s portfolio website stands out with its sleek, modern design powered by Next.js and Tailwind CSS, seamless integration with Sanity.io for real-time content updates, and lightning-fast performance. Recruiters love it for its intuitive navigation, mobile responsiveness, and clear presentation of skills, projects, and achievements. The site features interactive UI components, optimized images, and a robust backend, making it not just a portfolio, but a true demonstration of professional-grade web development and user experience.
 
 ---
 
