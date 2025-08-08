@@ -2,6 +2,7 @@ import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import PageTransitionWrapper from "@/components/page-transition-wrapper"; // client wrapper
+import type { Metadata } from "next";
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-sans",
@@ -17,17 +18,23 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-export const metadata = {
+// Centralized site URL and image paths
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+const FAVICON = "/favicon.ico";
+const APPLE_ICON = "/apple-touch-icon.png";
+
+export const metadata: Metadata = {
   title: "Japhet Cordova – Full Stack Developer",
   description: "Modern, SEO-optimized portfolio for recruiters and collaborators.",
   openGraph: {
     title: "Japhet Cordova – Full Stack Developer",
     description: "Modern, SEO-optimized portfolio for recruiters and collaborators.",
-    url: "https://next-japhetcordova.vercel.app/",
+    url: SITE_URL,
     type: "website",
     images: [
       {
-        url: "https://next-japhetcordova.vercel.app/og-image.jpg",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "Japhet Cordova Portfolio",
@@ -38,12 +45,12 @@ export const metadata = {
     card: "summary_large_image",
     title: "Japhet Cordova – Full Stack Developer",
     description: "Modern, SEO-optimized portfolio for recruiters and collaborators.",
-    images: ["https://next-japhetcordova.vercel.app/og-image.jpg"],
+    images: [OG_IMAGE],
   },
   icons: {
-    icon: "/favicon.ico", // Add your favicon path here
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: FAVICON,
+    shortcut: FAVICON,
+    apple: APPLE_ICON,
   },
 };
 
