@@ -43,9 +43,12 @@ export const Projects = () =>{
                             <p className="text-xs mb-2">
                                 An agency that navigates Medicare, Health, Marketplace, and Life Insurance.​
                             </p>
-                            <Badge className="bg-background font-mono text-foreground">
-                                runningshiusagency.com
-                            </Badge>
+                            <div className="w-full flex justify-end">
+                                <Badge className="bg-background font-mono text-foreground">
+                                    runningshiusagency.com
+                                </Badge>        
+                            </div>
+                        
                         </div>
                         <div className="border rounded-lg w-full p-2 hover:bg-foreground hover:text-background hover:-translate-y-2 cursor-pointer duration-200"
                             role="button"
@@ -60,9 +63,12 @@ export const Projects = () =>{
                             <p className="text-xs">
                                 A communication + sales CRM agency designed to simplify and boost productivity.
                             </p>
-                            <Badge className="bg-background font-mono text-foreground">
-                                avocadova.com
-                            </Badge>
+                            <div className="w-full flex justify-end">
+                                <Badge className="bg-background font-mono text-foreground">
+                                    avocadova.com
+                                </Badge> 
+                            </div>
+ 
                         </div>
                     </div>
                     <div className="flex gap-2 flex-wrap">
@@ -98,9 +104,11 @@ export const Projects = () =>{
                             <p className="text-xs mb-2">
                                 Insurance company that compares insurance policies from a wide range of carriers.
                             </p>
-                            <Badge className="bg-background font-mono text-foreground">
-                                tmtinsurance.com
-                            </Badge>
+                            <div className="w-full flex justify-end">
+                                <Badge className="bg-background font-mono text-foreground">
+                                    tmtinsurance.com
+                                </Badge>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -43,11 +43,7 @@ export const About = () =>{
                         </p>
                         <br />
                         <p>
-                            My strengths lie in programming with modern technologies, paired with fast learning, creativity, leadership, and product-level thinking. I’m passionate about teaching, simplifying complexity, and building organized solutions that make a real impact.                    
-                        </p>
-                        <br />
-                        <p>
-                            I value emphasis, efficiency, high quality, strong foundational systems, security, data privacy, and cutting-edge product excellence.
+                            In addition to my core engineering background, I’ve worked hands-on as an Agency Setup & Branding Specialist, where I helped launch professional digital marketing agencies. I’ve set up lightweight but credible websites using platforms like Webflow and WordPress, managed domain configurations, branded business email systems (e.g., Google Workspace), and crafted essential digital assets such as logos, About pages, and privacy policies—ensuring a cohesive, trustworthy brand presence for onboarding to native ad platforms like Taboola, Outbrain, and MGID.                    
                         </p>
                         <br />
                         <p>

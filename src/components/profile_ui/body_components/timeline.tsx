@@ -4,10 +4,11 @@ import { Card, CardTitle, CardContent, CardHeader, } from "../../../components/u
 import { BriefcaseBusiness } from "lucide-react";
 
 const experiences = [
-  { role: "Frontend Developer", company: "TMT Insurance", year: "2025" },
+  { role: "Vice President", company: "UMTC CODES", year: "2025" },
   { role: "Programming Champion", company: "CSIT Fest", year: "2025" },
+  { role: "Frontend Developer", company: "TMT Insurance", year: "2025" },
   { role: "Hackathon Champion", company: "CSIT", year: "2025" },
-  { role: "Java Mentor", company: "Batch 2024", year: "2025" },
+  { role: "Java Mentor", company: "Batch 2024", year: "2024" },
   { role: "BS Information Technology", company: "University of Mindanao", year: "2024" },
   { role: "Hello World! 👋🏻", company: "Wrote my first line of code", year: "2023" },
 ];

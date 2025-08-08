@@ -29,23 +29,23 @@ export const Connect = () =>{
             </CardHeader>
             <CardContent className="flex flex-col mt-0 pl-3.5 gap-4">
                     <a
-                        className="w-full bg-background2 rounded-md p-2 hover:bg-accent transition-colors duration-150 cursor-pointer"
+                        className="w-full bg-background2 rounded-md p-2 hover:bg-muted transition-colors duration-200 cursor-pointer"
                         href="mailto:japhetcordova9@gmail.com"
                     >
                         <h1 className="text-sm font-semibold mb-0.5">Email</h1>
-                        <p className="text-xs text-muted-foreground">japhetcordova9@gmail.com</p>
+                        <p className="text-xs">japhetcordova9@gmail.com</p>
                     </a>
                     <div>
                         <h1 className="font-semibold mb-1">Let&apos;s Talk</h1>
                         <div
-                            className="flex-1 flex justify-between bg-background2 rounded-md p-2 hover:bg-accent transition-colors duration-150 cursor-pointer"
+                            className="flex-1 flex justify-between bg-background2 rounded-md p-2 hover:bg-muted transition-colors duration-200 cursor-pointer"
                             role="button"
                             tabIndex={0}
                             aria-label="Schedule a call via Calendly"
                             onKeyDown={(e) => e.key === 'Enter' && window.open('https://calendly.com/japhetcordova9/schedule-a-call', '_blank', 'noopener,noreferrer')}
                             onClick={() => window.open('https://calendly.com/japhetcordova9/schedule-a-call', '_blank', 'noopener,noreferrer')}
                         >
-                            <h1 className="text-sm  font-semibold mb-0.5">Schedule a Call</h1>
+                            <h1 className="text-sm font-semibold mb-0.5">Schedule a Call</h1>
                             <ChevronRight className="h-4.5 w-4.5"/>
                         </div>
                     </div>
@@ -56,16 +56,23 @@ export const Connect = () =>{
                             
                         >
                             <p className="text-xs text-muted-foreground">Available for speaking at events about software development and emerging technologies.</p>
-                            <a className="text-sm font-semibold mb-0.5 mt-1 hover:underline hover:cursor-pointer flex items-center"
-                            href="mailto:japhetcordova9@gmail.com"
-                            >Get in touch <ChevronRight className="ml-2 h-4 w-4"/></a>
+                            <button
+                                type="button"
+                                aria-label="Schedule a call via Calendly"
+                                onKeyDown={(e) => e.key === 'Enter' && window.open('https://calendly.com/japhetcordova9/schedule-a-call', '_blank', 'noopener,noreferrer')}
+                                onClick={() => window.open('https://calendly.com/japhetcordova9/schedule-a-call', '_blank', 'noopener,noreferrer')}
+                                className="text-sm font-semibold mb-0.5 mt-1 hover:underline hover:cursor-pointer flex items-center bg-transparent border-none p-0"
+                                >
+                                Get in touch <ChevronRight className="ml-2 h-4 w-4"/>
+                            </button>
+
                         </div>
                     </div>
                     <div>
                         <h1 className="font-semibold mb-1">Social Links</h1>
                         <div className="flex gap-2">
                             <div
-                                className="w-full flex justify-center   bg-background2 rounded-md p-2 hover:bg-accent transition-colors duration-150 cursor-pointer"
+                                className="w-full flex justify-center bg-background2 rounded-md p-2 hover:bg-muted transition-colors duration-150 cursor-pointer border"
                                 role="button"
                                 tabIndex={0}
                                 aria-label="Visit GitHub profile"
@@ -83,7 +90,7 @@ export const Connect = () =>{
                                 </svg>
                             </div>
                             <div
-                                className="w-full   flex justify-center bg-background2 rounded-md p-2 hover:bg-accent  transition-colors duration-150 cursor-pointer"
+                                className="w-full   flex justify-center bg-background2 rounded-md p-2 hover:bg-muted  transition-colors duration-150 cursor-pointer border"
                                 role="button"
                                 tabIndex={0}
                                 aria-label="Visit LinkedIn profile"
@@ -101,7 +108,7 @@ export const Connect = () =>{
                                 </svg>
                             </div>
                             <div
-                                className="w-full   flex justify-center bg-background2 rounded-md p-2 hover:bg-accent  transition-colors duration-150 cursor-pointer"
+                                className="w-full   flex justify-center bg-background2 rounded-md p-2 hover:bg-muted border transition-colors duration-150 cursor-pointer"
                                 role="button"
                                 tabIndex={0}
                                 aria-label="Visit Facebook profile"
@@ -125,7 +132,7 @@ export const Connect = () =>{
                         <h1 className="font-semibold mb-1">A member of</h1>
                         <div className="flex flex-col gap-1">
                         <div
-                            className="w-full flex justify-between bg-background2 rounded-md p-2 hover:bg-accent transition-colors duration-150 cursor-pointer items-center h-auto"
+                            className="w-full flex justify-between bg-background2 rounded-md p-2 hover:bg-muted transition-colors duration-150 cursor-pointer items-center h-auto group"
                             role="button"
                             tabIndex={0}
                             aria-label="Visit UMTC page"
@@ -136,7 +143,7 @@ export const Connect = () =>{
                             <ExternalLink className="h-3.5 w-3.5 basis-5"/>
                         </div>
                         <div
-                            className="w-full flex justify-between bg-background2 rounded-md p-2 hover:bg-accent transition-colors duration-150 cursor-pointer items-center h-auto"
+                            className="w-full flex justify-between bg-background2 rounded-md p-2 hover:bg-muted transition-colors duration-150 cursor-pointer items-center h-auto"
                             role="button"
                             tabIndex={0}
                             aria-label="Visit CLC page"
@@ -147,9 +154,7 @@ export const Connect = () =>{
                             <ExternalLink className="h-3.5 w-3.5"/>
                         </div>
                         </div>
-                        
                     </div>
-                    
             </CardContent>
         </Card>
     )
