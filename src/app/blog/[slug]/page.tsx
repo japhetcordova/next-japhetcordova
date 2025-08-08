@@ -1,6 +1,4 @@
 import { PortableText } from "next-sanity";
-import imageUrlBuilder from "@sanity/image-url";
-import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "@/sanity/client";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -35,12 +33,6 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0] {
 
 const link = "/blog";
 
-const { projectId, dataset } = client.config();
-const urlFor = (source: SanityImageSource) =>
-  projectId && dataset
-    ? imageUrlBuilder({ projectId, dataset }).image(source)
-    : null;
-
 const options = { next: { revalidate: 30 } };
 
 export default async function PostPage({
@@ -56,10 +48,6 @@ export default async function PostPage({
     notFound();
   }
 
-  const postImageUrl = post.image
-    ? urlFor(post.image)?.width(1200).height(400).quality(90).url()
-    : null;
-
   return (
     <main className="container mx-auto min-h-screen max-w-3xl p-2 lg:p-8 flex flex-col">
       <Link href={link}>
@@ -68,20 +56,6 @@ export default async function PostPage({
           Back to blog
         </span>
       </Link>
-      
-      {postImageUrl && (
-        <div className="w-full flex justify-center">
-          <img
-            src={postImageUrl}
-            alt={post.title}
-            className="w-full max-w-3xl h-[180px] sm:h-[260px] md:h-[340px] object-cover object-center rounded-t-xl shadow-md"
-            style={{ aspectRatio: '16/5' }}
-            width="1200"
-            height="400"
-            loading="lazy"
-          />
-        </div>
-      )}
       
       <p className="mt-4 md:mt-8 text-gray-600">
         {new Date(post.publishedAt).toLocaleDateString('en-US', {
@@ -107,7 +81,8 @@ export default async function PostPage({
         </div>
       )}
       
-      <Card className="prose p-4 border text-sm">
+      <Card className="prose p-4 md:p-8 border text-base md:text-xl mt-4">
+        <hr />
         {Array.isArray(post.body) && <PortableText value={post.body} />}
       </Card>
       <Footer/>
