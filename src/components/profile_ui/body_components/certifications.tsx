@@ -8,10 +8,10 @@ export const Certifications = () =>{
     const action = true;
     const link = "/profile";
     const Certificates = [
-        {certificate: "Coming soon", company: "free code camp"},
-        {certificate: "Coming soon", company: "Deeplearning.AI"},
-        {certificate: "Coming soon", company: "University of Helsinki"},
-        {certificate: "Coming soon", company: "Google"},
+        {certificate: "Web Development", company: "free code camp"},
+        {certificate: "Prompt Engineering for Developers", company: "Deeplearning.AI"},
+        {certificate: "Full Stack Open", company: "University of Helsinki"},
+        {certificate: "Google project management", company: "Google"},
     ]
     return(
         <Card className="py-4 h-full">
@@ -37,10 +37,10 @@ export const Certifications = () =>{
                 {Certificates.slice(0, 4).map((cert, idx) => (
                     <div
                     key={idx}
-                    className="bg-background2 rounded-md p-2 hover:bg-accent transition-colors duration-150"
+                    className="bg-background2 rounded-md p-2 hover:bg-foreground hover:text-background transition-colors cursor-pointer group duration-300"
                     >
                     <h1 className="text-sm font-semibold mb-0.5">{cert.certificate}</h1>
-                    <p className="text-xs text-muted-foreground">{cert.company}</p>
+                    <p className="text-xs text-muted-foreground group-hover:text-muted duration-300">{cert.company}</p>
                     </div>
                 ))}
             </CardContent>

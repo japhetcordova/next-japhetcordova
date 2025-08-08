@@ -78,7 +78,7 @@ export default async function PostPage({
             style={{ aspectRatio: '16/5' }}
             width="1200"
             height="400"
-            loading="eager"
+            loading="lazy"
           />
         </div>
       )}
