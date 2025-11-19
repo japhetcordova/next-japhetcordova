@@ -15,8 +15,8 @@ const experiences = [
   { role: "Programming Champion", company: "CSIT Fest", year: "2024" },
   { role: "Junior Developer", company: "TMT Insurance", year: "2025" },
   { role: "Hackathon Champion", company: "Local School Hackathon", year: "2024" },
-  { role: "BS Information Technology", company: "University of Mindanao", year: "2024" },
   { role: "Java Mentor", company: "Batch 2024", year: "2024" },
+  { role: "BS Information Technology", company: "University of Mindanao", year: "2024" },
   { role: "Hello World! 👋🏻", company: "Wrote my first line of code", year: "2023" },
 ];
 
