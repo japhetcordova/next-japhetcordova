@@ -39,15 +39,15 @@ export const About = () =>{
                     </CardHeader>
                     <CardContent className="mt-0 pl-3.5 text-sm">
                         <p>
-                            I am a full-stack developer and software engineer with two years of hands-on experience designing and building software solutions, debugging complex issues, developing SaaS platforms, creating professional portfolios, and engineering comprehensive Human Resource Management Systems (HRMS).
+                            I am a Full-Stack Software Engineer and AI/Automation Developer with a two-year track record of delivering scalable solutions that maximize efficiency and accelerate business growth. I engineer and launch SaaS platforms and comprehensive HRMS systems that result in streamlined operations and measurable cost reduction.
                         </p>
                         <br />
                         <p>
-                            In addition to my core engineering background, I’ve worked hands-on as an Agency Setup & Branding Specialist, where I helped launch professional digital marketing agencies. I’ve set up lightweight but credible websites using platforms like Webflow and WordPress, managed domain configurations, branded business email systems (e.g., Google Workspace), and crafted essential digital assets such as logos, About pages, and privacy policies—ensuring a cohesive, trustworthy brand presence for onboarding to native ad platforms like Taboola, Outbrain, and MGID.                    
+                            Beyond engineering, I ensure rapid market readiness. I establish secure, professional digital footprints (Webflow/WordPress, domain setup, branded email) that enable the swift and successful launch of professional digital marketing agencies, critical for seamless onboarding onto major native ad platforms (Taboola, Outbrain, MGID).
                         </p>
                         <br />
                         <p>
-                            Currently, I am taking a major leap into AI development—focusing on building intelligent automations and data-driven solutions that simplify workflows, enhance decision-making, and empower business leaders to make well-informed, strategic choices with confidence.
+                            My current focus is on building intelligent, data-driven automations designed to simplify complex workflows, enhance data accuracy, and empower business leaders to make well-informed, strategic decisions with confidence and less worry.
                         </p>
                     </CardContent>
                 </Card>

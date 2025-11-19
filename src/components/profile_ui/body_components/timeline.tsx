@@ -4,14 +4,22 @@ import { Card, CardTitle, CardContent, CardHeader, } from "../../../components/u
 import { BriefcaseBusiness } from "lucide-react";
 
 const experiences = [
-  { role: "Vice President", company: "UMTC CODES", year: "2025" },
-  { role: "Programming Champion", company: "CSIT Fest", year: "2025" },
-  { role: "Frontend Developer", company: "TMT Insurance", year: "2025" },
-  { role: "Hackathon Champion", company: "CSIT", year: "2025" },
-  { role: "Java Mentor", company: "Batch 2024", year: "2024" },
+  { role: "Co-founder", company: "Negoshunte", year: "2025" },
+  { role: "Lead Developer", company: "Christian Life Center", year: "2025" },
+  { role: "Lead Developer", company: "SafeBuildingPH", year: "2025" },
+  { role: "Lead Developer", company: "RentEach", year: "2025" },
+  { role: "Full-Stack Developer", company: "Tara", year: "2025" },
+  { role: "Lead Developer", company: "Helmet Heaven", year: "2025" },
+  { role: "V-President | Lead Dev", company: "UMTC CODES", year: "2025" },
+  { role: "Hackathon Champion", company: "Amixtra (Mindanao-Wide)", year: "2025" },
+  { role: "Programming Champion", company: "CSIT Fest", year: "2024" },
+  { role: "Junior Developer", company: "TMT Insurance", year: "2025" },
+  { role: "Hackathon Champion", company: "Local School Hackathon", year: "2024" },
   { role: "BS Information Technology", company: "University of Mindanao", year: "2024" },
+  { role: "Java Mentor", company: "Batch 2024", year: "2024" },
   { role: "Hello World! 👋🏻", company: "Wrote my first line of code", year: "2023" },
 ];
+
 export const Timeline = () =>{
     return(
         <Card className="py-4 h-full">

@@ -37,7 +37,7 @@ export const HeaderView = () =>{
             </div>
 
             {/* Position */}
-            <p className="text-md font-semibold text-muted-foreground">Full-stack Developer | Branding Specialist</p>
+            <p className="text-md font-semibold text-muted-foreground">19 || Full-stack Developer</p>
 
             {/* Buttons (including Champion Button) */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 md:mt-4">
@@ -47,7 +47,7 @@ export const HeaderView = () =>{
               </div>
               <Button className="champion-btn lg:w-md w-full" aria-label="Champion">
                 <Trophy className="w-5 h-5" />
-                UMTC 2025 HACKATHON CHAMPION
+                AMIXTRA HACKATHON CHAMPION 2025
               </Button>
 
             </div>

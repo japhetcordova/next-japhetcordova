@@ -38,6 +38,9 @@ export const Body = () =>{
                             <div className="flex-[1/2]">
                                 <Certifications/>
                             </div>
+                            <div className="flex-[1/2]">
+                                <Connect/>
+                            </div>
                         </div>               
                     </div>
                     <div className="flex flex-col md:flex-row gap-2 w-full">                      
@@ -54,9 +57,6 @@ export const Body = () =>{
                         </div>               
                     </div>
                     <div className="flex flex-col md:flex-row gap-2 w-full">                      
-                        <div className="flex flex-col flex-[1]">
-                        <Connect/>
-                        </div>
                         <div className="flex-[2]">
                             <Blog/>
                         </div>                

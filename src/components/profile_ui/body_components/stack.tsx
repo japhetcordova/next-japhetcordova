@@ -13,7 +13,7 @@ export const Stack = () =>{
 
     const stack = [
         { field: "Frontend", language: ["Next.js", "React", "JavaScript", "TypeScript", "Tailwind CSS"] },
-        { field: "Backend", language: ["Javascript", "Python", "Java", "Php", "Laravel", "tRPC", "PostgresSQL", "MongoDB"] },
+        { field: "Backend", language: ["Python", "Java", "PHP (Laravel)", "tRPC", "PostgreSQL", "MongoDB"] },
         { field: "DevOps & Cloud", language: ["AWS", "Docker", "GitHub Actions"] },
     ]
     return(
